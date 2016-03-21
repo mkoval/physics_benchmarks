@@ -9,22 +9,26 @@ copy the [`fcl.package.xml` file](fcl.package.xml) into your checkout of
 these packages with compiler optimizations enabled, i.e. pass
 `-DCMAKE_BUILD_TYPE=Release` to cmake, to get meaningful benchmark results.
 
-The full build process should look something like this:
+The full build process should look something like this. First, create a Catkin
+workspace:
 ```console
 $ mkdir -p /path/to/my/workspace/src
 $ cd /path/to/my/workspace
-# Create a Catkin workspace:
 $ catkin init
 $ catkin config --extend /opt/ros/indigo
 $ catkin config --cmake-args -DCMAKE_BUILD_TYPE=Release
-# Checkout source code:
+```
+Next, use `wstool` to checkout the source code and `rosdep` to install system
+dependencies:
+```console
 $ wget -O src/.rosinstall https://raw.githubusercontent.com/mkoval/physics_benchmarks/master/rosinstall
 $ wstool update -t src
 $ cp src/physics_benchmarks/fcl.package.xml src/fcl/package.xml
-# Install system dependencies:
 $ rosdep update
 $ rosdep install -y --rosdistro=indigo --ignore-src --from-path=src
-# Build:
+```
+Finally, use `catkin-tools` to build the workspace:
+```console
 $ catkin build
 ```
 
