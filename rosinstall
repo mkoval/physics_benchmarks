@@ -1,0 +1,16 @@
+- git:
+    local-name: aikido
+    uri: https://github.com/personalrobotics/aikido.git
+- git:
+    local-name: dart
+    uri: https://github.com/dartsim/dart.git
+- git:
+    local-name: fcl
+    uri: https://github.com/flexible-collision-library/fcl.git
+    version: 0.4.0
+- git:
+    local-name: mujoco
+    uri: https://github.com/personalrobotics/MuJoCo.git
+- git:
+    local-name: physics_benchmarks
+    uri: https://github.com/mkoval/physics_benchmarks.git
