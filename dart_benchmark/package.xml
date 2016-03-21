@@ -8,6 +8,7 @@
   <license>unreleased</license>
   <buildtool_depend>catkin</buildtool_depend>
   <depend>aikido</depend>
+  <depend>aikido_rviz</depend>
   <depend>boost</depend>
   <depend>dart</depend>
 </package>
