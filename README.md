@@ -21,6 +21,28 @@ packages using the following `.rosinstall` file:
     uri: https://github.com/mkoval/physics_benchmarks.git
 ```
 
+You will also need to copy this `package.xml` file in the `fcl` directory:
+```xml
+<package format="2">
+  <name>fcl</name>
+  <version>0.4.0</version>
+  <description>FCL is a collision checking library</description>
+  <author email="panj@cs.unc.edu">Jia Pan</author>
+  <maintainer email="isucan@willowgarage.com">Ioan Sucan</maintainer>
+  <license>BSD</license>
+  <url>http://gamma.cs.unc.edu/FCL/</url>
+  <buildtool_depend>catkin</buildtool_depend>
+  <buildtool_depend>pkg-config</buildtool_depend>
+  <depend>octomap</depend>
+  <depend>libccd</depend>
+  <depend>boost</depend>
+  <!-- These are required by REP-136. -->
+  <exec_depend>catkin</exec_depend>
+  <export>
+    <build_type>cmake</build_type>
+  </export>
+</package>
+```
 
 ## Usage: DART Benchmark
 
