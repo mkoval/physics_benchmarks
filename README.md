@@ -4,7 +4,7 @@
 
 Follow the [Personal Robotics Lab development guide][develguide] to build these
 packages using this [`.rosinstall` file](rosinstall). You will also need to
-copy the [`or_fcl.package.xml` file](or_fcl.package.xml) into your checkout of
+copy the [`fcl.package.xml` file](fcl.package.xml) into your checkout of
 `or_fcl` and rename it to `package.xml`. We *strongly recommend* that you build
 these packages with compiler optimizations enabled, i.e. pass
 `-DCMAKE_BUILD_TYPE=Release` to cmake, to get meaningful benchmark results.
@@ -20,10 +20,10 @@ $ catkin config --cmake-args -DCMAKE_BUILD_TYPE=Release
 # Checkout source code:
 $ wget -O src/.rosinstall https://raw.githubusercontent.com/mkoval/physics_benchmarks/master/rosinstall
 $ wstool update -t src
-$ cp src/or_fcl.package.xml src/or_fcl/package.xml
+$ cp src/physics_benchmarks/fcl.package.xml src/fcl/package.xml
 # Install system dependencies:
 $ rosdep update
-$ rosdep -y --rosdistro=indigo --ignore-src --from-path=src
+$ rosdep install -y --rosdistro=indigo --ignore-src --from-path=src
 # Build:
 $ catkin build
 ```
